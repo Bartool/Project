@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
@@ -35,20 +37,17 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Your profile
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="eventBoard.html">Events</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="news.html">News</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
+                    <a href="chat.html">Chat</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -64,15 +63,41 @@
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-			<div  type="image" src="./img/menuButton.png" style="position:relative; padding-left:10px;>
-				 <a  href="#menu-toggle" class="btn btn-default" id="menu-toggle" ><img src="img/menuButton.png" id="MenuButton" style="height:50px;width:50px;"></a>
+        <div>
+			<div style="position:relative;float:left;">
+				 <a  href="#menu-toggle" class="btn btn-default" id="menu-toggle" ><img src="img/menuButton.png" id="MenuButton" style="height:45px;width:45px;"></a>
 			</div>
+			
+			
+			<form style = "float:left;">		
+				<input class="form-control input-lg" style = "height: 60px;width: 200px" type="text" name="firstname">
+			</form>
 			<div>
-				<img src="img/map.png" id="mapp">
+				<img  src="img/Search.png" id="search" style = "height: 60px;width: 60px">
 			</div>
-					
+			
+			
+			
+				
+			<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 80%; width: 100%">
+			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 17%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Content"></button>
+			
+			<!--
+			<map name="maplinks">
+				<area shape="rect" coords="70,50,250,90" alt="Sun" href="#" title="Header" data-toggle="popover" data-trigger="focus" data-placement="auto" data-content="Content" >
+				<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+				<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+			</map>
+				-->	
         </div>
         <!-- /#page-content-wrapper -->
+        
+
+		<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();   
+		});
+		</script>
 
     </div>
     <!-- /#wrapper -->
