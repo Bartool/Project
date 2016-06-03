@@ -8,15 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-	<!-- googleFonts -->
-	<link href="css.lobster.css" rel="stylesheet" type="text/css">
-	<link href="css/bar.css" rel="stylesheet" type="text/css">
-	<link href="css/bar2" rel="stylesheet" type="text/css">
-
-	<!-- CSS -->    
-	<link rel="stylesheet" href="css/styleSideBar.css">
 
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
@@ -37,64 +30,39 @@
 
 <body>
 
+    <div id="wrapper">
 
-<input type="checkbox" class="checkbox" id="menu-toogle"/>
-<label for="menu-toogle" class="menu-toogle"></label>
-<nav class="nav">
-  <a href="#" class="nav__item current">Your profile</a>
-  <a href="chat.html" class="nav__item current">Chat</a>
-  <a href="news.html" class="nav__item">Newsboard</a>
-  <a href="eventBoard.html" class="nav__item">Events</a>
-  <a href="map.html" class="nav__item">Map</a>
-  <a href="#" class="nav__item">Settings</a>
-</nav>
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Your profile
+                    </a>
+                </li>
+                <li>
+                    <a href="eventBoard.html">Events</a>
+                </li>
+                <li>
+                    <a href="news.html">News</a>
+                </li>
+                <li>
+                    <a href="chat.html">Chat</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
 
- 
-
-<main class="main-w">
-    
-  <!-- <header class="header-w"> 
-   <figure>
-      <img class="img1" src="../img/1.jpg" alt="" />
-    </figure>
-    <section class="header-w__description">
-      <h1 class="header-w__title">NewsBoard</h1>
-        <p class="paragraph">doasjdiosaj
-        oasidjoasijdoas sidjisdjs idjisdjsidjs idjsidsjo
-        dosajoidsjoajjosidjs aidjoasijdoajdiosa</p>
-      <h2 class="header-w__title2">App</h2>
-      <p class="paragraph">psdaofipdsoiafopdsi pfodsifpos daipfosidpofai
-        psaodifpsdaoifpdsoifpdsoaif dspofisapdofisa fopdsaifpsodi
-        aspdofidspofidspao ifpdosifap
-         fdspdfiopdsai podsip fa</p>-->
-         
-		
-		
-		<form style = "float:left;">		
-			<input class="form-control input-lg" style = "height: 60px;width: 180px" type="text" name="firstname">
-		</form>
-		<div>
-			<img  src="img/Search.png" id="search" style = "height: 60px;width: 60px">
-		</div>
-		
-		
-		
-		
-		<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 90%; width: 100%">
-		<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 17%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-content="" data-html="true"></button>
-		
-         
- <!--   </section>
-    
-    
-    
-  </header>-->
-  
-  
-  
-</main>
-
-        <!-- Page Content 
+        <!-- Page Content -->
         <div>
 			<div style="position:relative;float:left;">
 				 <a  href="#menu-toggle" class="btn btn-default" id="menu-toggle" ><img src="img/menuButton.png" id="MenuButton" style="height:45px;width:45px;"></a>

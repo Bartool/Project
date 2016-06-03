@@ -1,0 +1,184 @@
+/********************\
+  $Reset ☰
+\********************/
+* {
+  box-sizing:border-box;
+}
+body {
+  margin:0;
+  padding:0;
+  background-color:#99cc00;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+a {
+  text-decoration:none;
+}
+/********************\
+  $Layout ☰
+\********************/
+
+/*Menu Style*/
+.nav {
+  position:absolute;
+  width:200px;
+  height:100vh;
+  top:0;
+  left:-220px; /*hide Menu to the left*/
+  padding-top:47px;
+  background-color: rgba(29, 33, 32, 1);
+  border-right:4px solid rgba(96, 128, 0, 1);
+  transition:all .5s ease; /*soft transition*/
+}
+   /*style of menu elements*/
+   .nav__item {
+     display:block;
+     width:96%;
+     margin:0 auto;
+     line-height:2;
+     position:relative; /*relative position to add a triangle marker*/
+     border-bottom:.5px solid rgba(59, 62, 61, 1);
+     border-top:.5px solid rgba(59, 62, 61, 1);
+     background-color:transparent;
+     font-family: 'Lato', sans-serif;
+     text-align:center;
+     color:rgba(221, 231, 228, 1);
+   }
+       /*black triangle to the selected option*/
+       .current:before {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute;
+          border-top:17px solid transparent;
+          border-left:15px solid #1D2120;
+          border-bottom:17px solid transparent;
+          top:0px;
+          right:-15px;
+          z-index:4; /*high z-index, for front position*/
+       }
+      /*add a border to the triangle*/
+      .current:after {
+          content:"";
+          width:0;
+          height:0;
+          position:absolute;
+          border-top:16.5px solid transparent;
+          border-left:17px solid rgba(96, 128, 0, 1);
+          border-bottom:17px solid transparent;
+          top:.5px;
+          right:-21px;
+          z-index:1;  
+      }
+  /*Menu icon styles*/
+  .menu-toogle {
+    position:absolute; 
+    width: 40px;
+    line-height:1.1;
+    text-align:center;
+    top:0px;
+    left: 6px; 
+    border-radius:1px;
+    background-color: #808080;
+    transition: all .5s ease; /*soft transition*/
+    z-index:10;
+  }
+    /*add the symbol*/
+    .menu-toogle::before {
+      content:url(../img/menuButton2.png);
+      font-size:12px;
+      color:white;
+    }
+
+/* Le damos unos estilos al contenedor principal*/
+.main-w {
+  width:100%;
+  height:100vh;
+  transition: all .5s ease;
+}   
+    .header-w figure {
+      width:100%;
+      height:150px;
+      text-align:center;
+      position:relative;
+    }
+        .header-w figure:before {
+          content:"O";
+          width:15px;
+          height:15px;
+          position:absolute;
+          background-color:white;
+          border-radius:100%;
+          color:#A9BC00;
+          font-size:120%;
+          font-wheight:bolder;
+          font-family:verdana;
+          left:42vw;
+          top:9vw;     
+        }
+        .header-w figure:after {
+          content:"O";
+          width:15px;
+          height:15px;
+          position:absolute;
+          background-color:white;
+          border-radius:100%;
+          color:#A9BC00;
+          font-size:120%;
+          font-wheight:bolder;
+          font-family:verdana;
+          left:50.8vw;
+          top:9vw; 
+        }
+    .img1 {
+      position: absolute;
+      height: 130%;
+      right: 25%;
+      margin:3em 6vw 0 0;
+      border:4px solid white;
+      
+    }
+    .header-w__description {
+      width:80%;
+      height:auto;
+      margin:0 auto;
+      padding:1em;
+      line-height:2;
+      text-align:center;
+      color:rgba(33, 36, 8, 1);
+    }
+        .header-w__title
+        {
+          font-size:300%;
+          font-family:Lobster;
+          margin:1em 0 0 0;
+        }
+        .header-w__title2 {
+          font-size:250%;
+          font-family:Lobster;
+          margin:0;
+        }
+    .paragraph {
+      width:80%;
+      margin:0 auto;
+      text-align:center;
+      font-family:'Source Sans Pro', sans-serif;
+    }
+
+    
+    /*if the checkbox is activated the menu appears.*/
+    .checkbox {
+      display:none; /*Checkbox hiden*/
+    }
+    .checkbox:checked ~ .nav {
+      left:0px; /*menu appears*/
+      position:fixed; /* we fixed the menu so if we scroll the other part the menu is not going to move*/
+    }
+    .checkbox:checked ~ .main-w {
+      margin-left:200px; 
+    }
+    .checkbox:checked ~ .menu-toogle { 
+      left:40%;
+      position:fixed; 
+    }
+
