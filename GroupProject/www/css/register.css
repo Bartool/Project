@@ -1,11 +1,10 @@
-
-body {
+body{
     background-image:url("../img/background.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100% ;
 	background-position:center;
 	background-attachment:fixed;
 }
-.container .loginbox{
-	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+.centered-form{
+	margin-top: 10%;
 }
