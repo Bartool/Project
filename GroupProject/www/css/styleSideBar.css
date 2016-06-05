@@ -79,7 +79,7 @@ a {
     top:0px;
     left: 6px; 
     border-radius:1px;
-    background-color: #808080;
+    background-color: #008000;
     transition: all .5s ease; /*soft transition*/
     z-index:10;
   }
