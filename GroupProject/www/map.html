@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!-- googleFonts --> 
 <link href="css/lobster.css" rel="stylesheet" type="text/css">
 <link href="css/bar.css" rel="stylesheet" type="text/css">
@@ -15,6 +15,15 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/leaflet.js"></script>
 
+<style>
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+}
+</style>
 
 </head>
 
@@ -50,12 +59,33 @@
 			<div id="mapid" style = "height:500px;"></div>
 			
 			<script>
-			var mymap = L.map('mapid').setView([51.754267, 19.452279], 13);
+			var mymap = L.map('mapid').setView([51.754267, 19.452279], 17);
 			L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
 				maxZoom: 18,
 				id: 'mapbox.streets'
 			}).addTo(mymap);
-	
+			
+			function onLocationFound(e) {
+				var radius = e.accuracy / 2;
+
+				L.marker(e.latlng).addTo(map)
+					.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+				L.circle(e.latlng, radius).addTo(map);
+			}
+
+			function onLocationError(e) {
+				alert(e.message);
+			}
+
+			mymap.on('locationfound', onLocationFound);
+			mymap.on('locationerror', onLocationError);
+
+			mymap.locate({setView: true, maxZoom: 16});
+			
+			var marker = L.marker([51.75514,19.45174]).addTo(mymap);
+			
 			</script>
 	  </header>
 	  
