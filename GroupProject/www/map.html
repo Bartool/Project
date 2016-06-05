@@ -1,42 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <script src="js/jquery.min.js"></script>
-
-	<!-- googleFonts -->
-	<link href="css.lobster.css" rel="stylesheet" type="text/css">
-	<link href="css/bar.css" rel="stylesheet" type="text/css">
-	<link href="css/bar2" rel="stylesheet" type="text/css">
-
-	<!-- CSS -->    
-	<link rel="stylesheet" href="css/styleSideBar.css">
-
-    <title>Simple Sidebar - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+<!-- googleFonts --> 
+<link href="css.lobster.css" rel="stylesheet" type="text/css">
+<link href="css/bar.css" rel="stylesheet" type="text/css">
+<link href="css/bar2" rel="stylesheet" type="text/css">
+<!-- CSS -->   
+<link href="css/bootstrap.min.css" rel="stylesheet">  
+<link rel="stylesheet" href="css/styleSideBar.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
 
 <input type="checkbox" class="checkbox" id="menu-toogle"/>
 <label for="menu-toogle" class="menu-toogle"></label>
@@ -49,99 +24,30 @@
   <a href="#" class="nav__item">Settings</a>
 </nav>
 
- 
-
 <main class="main-w">
     
-  <!-- <header class="header-w"> 
-   <figure>
-      <img class="img1" src="../img/1.jpg" alt="" />
-    </figure>
-    <section class="header-w__description">
-      <h1 class="header-w__title">NewsBoard</h1>
-        <p class="paragraph">doasjdiosaj
-        oasidjoasijdoas sidjisdjs idjisdjsidjs idjsidsjo
-        dosajoidsjoajjosidjs aidjoasijdoajdiosa</p>
-      <h2 class="header-w__title2">App</h2>
-      <p class="paragraph">psdaofipdsoiafopdsi pfodsifpos daipfosidpofai
-        psaodifpsdaoifpdsoifpdsoaif dspofisapdofisa fopdsaifpsodi
-        aspdofidspofidspao ifpdosifap
-         fdspdfiopdsai podsip fa</p>-->
-         
-		
-		
-		<form style = "float:left;">		
-			<input class="form-control input-lg" style = "height: 60px;width: 180px" type="text" name="firstname">
+  <header class="header-w"> 	
+
+		<form style = "position: relative; left: 15%;width:70%; float:left;">		
+			<input class="form-control" style = "width: 100%" type="text" name="firstname">
 		</form>
-		<div>
-			<img  src="img/Search.png" id="search" style = "height: 60px;width: 60px">
+		<div style = "height: 10%;width: 10%; float:right;">
+			<img  src="img/Search.png" id="search" style = "height: 100%;width: 100% ">
 		</div>
 		
+		<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 80%; width: 100%">
+		<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 14%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-html="true"></button>
 		
-		
-		
-		<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 90%; width: 100%">
-		<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 17%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-content="" data-html="true"></button>
-		
-         
- <!--   </section>
-    
-    
-    
-  </header>-->
+   
+  </header>
   
-  
+	
   
 </main>
-
-        <!-- Page Content 
-        <div>
-			<div style="position:relative;float:left;">
-				 <a  href="#menu-toggle" class="btn btn-default" id="menu-toggle" ><img src="img/menuButton.png" id="MenuButton" style="height:45px;width:45px;"></a>
-			</div>
-			
-			
-			<form style = "float:left;">		
-				<input class="form-control input-lg" style = "height: 60px;width: 180px" type="text" name="firstname">
-			</form>
-			<div>
-				<img  src="img/Search.png" id="search" style = "height: 60px;width: 60px">
-			</div>
-			
-			
-			
-				
-			<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 80%; width: 100%">
-			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 17%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-content="" data-html="true"></button>
-			
-			
-        </div>
-        <!-- /#page-content-wrapper -->
-        
-
-		<script>
+	<script>
 		$(document).ready(function(){
 			$('[data-toggle="popover"]').popover();   
 		});
-		</script>
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
+	</script>
 </body>
-
 </html>
