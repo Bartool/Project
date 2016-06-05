@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- googleFonts --> 
-<link href="css.lobster.css" rel="stylesheet" type="text/css">
+<link href="css/lobster.css" rel="stylesheet" type="text/css">
 <link href="css/bar.css" rel="stylesheet" type="text/css">
-<link href="css/bar2" rel="stylesheet" type="text/css">
+<link href="css/bar2.css" rel="stylesheet" type="text/css">
 <!-- CSS -->   
 <link href="css/bootstrap.min.css" rel="stylesheet">  
 <link rel="stylesheet" href="css/styleSideBar.css">
+<link rel="stylesheet" href="css/leaflet.css" />
+<!--scripts-->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/leaflet.js"></script>
+
+
 </head>
 
 <body>
@@ -35,9 +41,22 @@
 			<img  src="img/Search.png" id="search" style = "height: 9%;width: 9%; float:right;">
 			
 			
-			<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative;  width: 100%;height: 80%;">
+			<!--<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative;  width: 100%;height: 80%;">
 			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 14%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-html="true"></button>
 	   
+			<iframe width="100%" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=19.3853759765625%2C51.73409845334694%2C19.498672485351562%2C51.78138250412973&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=14/51.7577/19.4420">View Larger Map</a></small>
+			-->
+			<br><hr>
+			<div id="mapid" style = "height:180px;"></div>
+			
+			<script>
+			var mymap = L.map('mapid').setView([51.754267, 19.452279], 13);
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
+				maxZoom: 18,
+				id: 'mapbox.streets'
+			}).addTo(mymap);
+	
+			</script>
 	  </header>
 	  
 		
