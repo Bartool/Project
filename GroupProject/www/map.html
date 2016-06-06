@@ -9,21 +9,12 @@
 <!-- CSS -->   
 <link href="css/bootstrap.min.css" rel="stylesheet">  
 <link rel="stylesheet" href="css/styleSideBar.css">
-<link rel="stylesheet" href="css/leaflet.css" />
+<link rel="stylesheet" href="css/leaflet.css">
+<link rel="stylesheet" href="css/mobileStyle.css">
 <!--scripts-->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/leaflet.js"></script>
-
-<style>
-body {
-    padding: 0;
-    margin: 0;
-}
-html, body, #map {
-    height: 100%;
-}
-</style>
 
 </head>
 
@@ -80,7 +71,7 @@ html, body, #map {
 			}
 
 			mymap.on('locationfound', onLocationFound);
-			mymap.on('locationerror', onLocationError);
+			//mymap.on('locationerror', onLocationError);
 
 			mymap.locate({setView: true, maxZoom: 16});
 			

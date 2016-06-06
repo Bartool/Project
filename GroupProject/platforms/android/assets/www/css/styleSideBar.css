@@ -73,20 +73,20 @@ a {
   /*Menu icon styles*/
   .menu-toogle {
     position:absolute; 
-    width: 35px;
+    width: 40px;
     line-height:1.1;
     text-align:center;
-    top:6.5px;
-    left: 8px; 
-    border-radius:3px;
-    background-color: #142b25;
+    top:0px;
+    left: 6px; 
+    border-radius:1px;
+    background-color: #008000;
     transition: all .5s ease; /*soft transition*/
     z-index:10;
   }
     /*add the symbol*/
     .menu-toogle::before {
-      content:"☰";
-      font-size:32px;
+      content:url(../img/menuButton2.png);
+      font-size:12px;
       color:white;
     }
 
