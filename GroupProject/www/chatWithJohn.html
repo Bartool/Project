@@ -34,21 +34,30 @@
 		
 	  <header class="header-w"> 	
 
-			<form style = "position: relative; left: 15%;width:70%; float:left;">		
-				<input class="form-control" style = "width: 100%" type="text" name="firstname">
+			<form style = "position: fixed; margin-left: 15%; width:70%; ">		
+				<input class="form-control" style = "width: 100%; float:left;" type="text" name="firstname">
+				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
 			</form>
-			<img  src="img/Search.png" id="search" style = "height: 9%;width: 9%; float:right;">
 			<br><hr>
 			<h1>John Smith</h1>
 			<hr>
-			<p>hi</p>
-			<p style = "margin-left: 90%;">hi</p>
-			<div class = "container">
-				<input class="form-control" style = "width:90%; position:fixed; bottom:2%;" type="text" name="message">
-			</div>
-			  </header>
-	</main>
+            <p >hi</p>
+			<p id = "sent" style = "bottom: 10%; margin-left: 90%;">hi</p>
+			<form name = "myForm" style = "width:90%; position:fixed; bottom:2%; margin-left: 5%;" onsubmit="sendMessage()">
+				<input class="form-control" type="text" name="message" >
+			</form>
+		  
+
 	
+    <script>
+    function sendMessage(){//I don't know why it's not working 
+        var x = document.forms["myForm"]["message"].value;
+		if (x != null || x != "") {
+			document.getElementById("sent").innerHTML += "\n" +x;
+		}
+	}
+    </script>
+    
 
 </body>
 	

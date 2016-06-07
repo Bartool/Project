@@ -55,7 +55,7 @@ a {
           border-bottom:17px solid transparent;
           top:0px;
           right:-15px;
-          z-index:4; /*high z-index, for front position*/
+          z-index:1000 /*high z-index, for front position*/
        }
       /*add a border to the triangle*/
       .current:after {
@@ -68,7 +68,7 @@ a {
           border-bottom:17px solid transparent;
           top:.5px;
           right:-21px;
-          z-index:1;  
+          z-index:100;  
       }
   /*Menu icon styles*/
   .menu-toogle {
@@ -178,7 +178,7 @@ a {
       margin-left:200px; 
     }
     .checkbox:checked ~ .menu-toogle { 
-      left:40%;
+      left:206px;
       position:fixed; 
     }
 
