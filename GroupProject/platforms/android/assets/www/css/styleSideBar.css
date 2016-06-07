@@ -38,12 +38,17 @@ a {
      margin:0 auto;
      line-height:2;
      position:relative; /*relative position to add a triangle marker*/
-     border-bottom:.5px solid rgba(59, 62, 61, 1);
-     border-top:.5px solid rgba(59, 62, 61, 1);
+     border-bottom:1px solid rgba(159, 162, 161, 1);
+     border-top:1px solid rgba(159, 162, 161, 1);
      background-color:transparent;
      font-family: 'Lato', sans-serif;
      text-align:center;
      color:rgba(221, 231, 228, 1);
+   }
+   .nav__item:hover {
+	   
+	   background-color: #993300;
+	   text-decoration:none
    }
        /*black triangle to the selected option*/
        .current:before {
