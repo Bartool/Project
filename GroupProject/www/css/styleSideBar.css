@@ -7,7 +7,7 @@
 body {
   margin:0;
   padding:0;
-  background-color:#99cc00;
+  background-color:#993300;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -27,8 +27,9 @@ a {
   left:-220px; /*hide Menu to the left*/
   padding-top:47px;
   background-color: rgba(29, 33, 32, 1);
-  border-right:4px solid rgba(96, 128, 0, 1);
+  border-right:4px solid rgba(196, 28, 0, 1);
   transition:all .5s ease; /*soft transition*/
+  z-index:1000;
 }
    /*style of menu elements*/
    .nav__item {
@@ -55,7 +56,7 @@ a {
           border-bottom:17px solid transparent;
           top:0px;
           right:-15px;
-          z-index:1000 /*high z-index, for front position*/
+          z-index:1000; /*high z-index, for front position*/
        }
       /*add a border to the triangle*/
       .current:after {
@@ -64,11 +65,11 @@ a {
           height:0;
           position:absolute;
           border-top:16.5px solid transparent;
-          border-left:17px solid rgba(96, 128, 0, 1);
+          border-left:17px solid rgba(196, 28, 0, 1);
           border-bottom:17px solid transparent;
           top:.5px;
           right:-21px;
-          z-index:100;  
+          z-index:999;  
       }
   /*Menu icon styles*/
   .menu-toogle {
@@ -79,7 +80,7 @@ a {
     top:0px;
     left: 6px; 
     border-radius:1px;
-    background-color: #008000;
+    background-color: #cc4400;
     transition: all .5s ease; /*soft transition*/
     z-index:10;
   }

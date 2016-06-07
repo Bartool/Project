@@ -10,6 +10,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/eventBoard.css" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/styleSideBar.css">
+	<link rel="stylesheet" href="css/mobileStyle.css">
 	<!-- scripts-->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>	
@@ -19,10 +20,10 @@
 	<input type="checkbox" class="checkbox" id="menu-toogle"/>
 	<label for="menu-toogle" class="menu-toogle"></label>
 	<nav class="nav">
-	  <a href="#" class="nav__item current">Your profile</a>
-	  <a href="chat.html" class="nav__item current">Chat</a>
+	  <a href="#" class="nav__item">Your profile</a>
+	  <a href="chat.html" class="nav__item ">Chat</a>
 	  <a href="news.html" class="nav__item">Newsboard</a>
-	  <a href="eventBoard.html" class="nav__item">Events</a>
+	  <a href="eventBoard.html" class="nav__item current">Events</a>
 	  <a href="map.html" class="nav__item">Map</a>
 	  <a href="#" class="nav__item">Settings</a>
 	</nav>
@@ -30,15 +31,13 @@
 	<main class="main-w">
 		
 	  <header class="header-w"> 	
-			<div class="container">
 				
-				<form style = "position: relative; left: 15%;width:70%; float:left;">		
-					<input class="form-control" style = "width: 100%" type="text" name="firstname">
-				</form>
-				
-				<img  src="img/Search.png" id="search" style = "height: 9%;width: 9%; float:right;">
-				
-				<br><br>
+			<form style = "position: fixed; margin-left: 15%; width:70%; z-index:10; ">		
+				<input class="form-control" style = "width: 100%; float:left; " type="text" name="firstname">
+				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
+			</form>
+				<br><hr><h1>Events</h1><hr>
+		  <div class="container">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
