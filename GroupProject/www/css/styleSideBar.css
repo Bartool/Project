@@ -72,7 +72,7 @@ a {
       }
   /*Menu icon styles*/
   .menu-toogle {
-    position:absolute; 
+    position:fixed; 
     width: 40px;
     line-height:1.1;
     text-align:center;
