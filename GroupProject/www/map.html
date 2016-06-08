@@ -44,7 +44,6 @@
 			<!--<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative;  width: 100%;height: 80%;">
 			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 14%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-html="true"></button>
 	   
-			<iframe width="100%" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=19.3853759765625%2C51.73409845334694%2C19.498672485351562%2C51.78138250412973&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=14/51.7577/19.4420">View Larger Map</a></small>
 			-->
 			<br><hr>
 			<div id="mapid" style = "position: absolute; width:100%; height:100%; top:40px;"></div>
@@ -74,9 +73,39 @@
 			//mymap.on('locationerror', onLocationError);
 
 			mymap.locate({setView: true, maxZoom: 16});
+		
+			var pois = new Array(1);//points of interest
+			pois[0] = L.polygon([
+				[51.74712, 19.45561],
+				[51.74717, 19.45608],
+				[51.74693, 19.45613],
+				[51.74689, 19.45565],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);	
+			pois[0].bindPopup("Building B19.<br>Information Technology Cente");
 			
-			var marker = L.marker([51.75514,19.45174]).addTo(mymap);
-			
+			pois[1] = L.polygon([
+				[51.75518, 19.45082],
+				[51.75526, 19.45202],
+				[51.75512, 19.45207],
+				[51.75500, 19.45085],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[1].bindPopup("Building A16.<br>International Faculty of Engineering. Tap <a href='ife.html'>here</a> for inside map.");
+				
+			pois[2] = L.polygon([
+				[51.75405, 19.45189],
+				[51.75407, 19.45219],
+				[51.75369, 19.45228],
+				[51.75364, 19.45198],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[2].bindPopup("Building A19.<br>Soltan auditorium");
+				
+			pois[3] = L.polygon([
+				[51.75255, 19.45298],
+				[51.75293, 19.45289],
+				[51.75298, 19.45373],
+				[51.75262, 19.45384],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[3].bindPopup("Building A10, W-2<br><uL><li>Deanery of  the Faculty of Electrical, Electronic, Computer and Control Engineering</li><li>I-12, Institute of electronic engineering systems</li><li>I-13, Institute of  Automatics</li><li>I-24, Institute of applied computer science</li><ul>");
 			</script>
 	  </header>
 	  
