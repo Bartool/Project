@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- googleFonts --> 
+<link href="css/lobster.css" rel="stylesheet" type="text/css">
+<link href="css/bar.css" rel="stylesheet" type="text/css">
+<link href="css/bar2.css" rel="stylesheet" type="text/css">
+<!-- CSS -->   
+<link href="css/bootstrap.min.css" rel="stylesheet">  
+<link rel="stylesheet" href="css/styleSideBar.css">
+<link rel="stylesheet" href="css/leaflet.css">
+<link rel="stylesheet" href="css/mobileStyle.css">
+<!--scripts-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/leaflet.js"></script>
+
+</head>
+
+<body>
+
+	<input type="checkbox" class="checkbox" id="menu-toogle"/>
+	<label for="menu-toogle" class="menu-toogle"></label>
+	<nav class="nav">
+	  <a href="#" class="nav__item">Your profile</a>
+	  <a href="chat.html" class="nav__item">Chat</a>
+	  <a href="news.html" class="nav__item">Newsboard</a>
+	  <a href="eventBoard.html" class="nav__item">Events</a>
+	  <a href="map.html" class="nav__item current">Map</a>
+	  <a href="#" class="nav__item">Settings</a>
+	</nav>
+
+	<main class="main-w">
+		
+	  <header class="header-w"> 	
+
+			<form style = "position: fixed; margin-left: 15%; width:70%; ">		
+				<input class="form-control" style = "width: 100%; float:left;" type="text" name="firstname">
+				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
+			</form>
+			
+
+			<!--<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative;  width: 100%;height: 80%;">
+			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 14%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-html="true"></button>
+	   
+			<iframe width="100%" height="800" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=19.3853759765625%2C51.73409845334694%2C19.498672485351562%2C51.78138250412973&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="http://www.openstreetmap.org/#map=14/51.7577/19.4420">View Larger Map</a></small>
+			-->
+			<br><hr>
+			<div id="mapid" style = "position: absolute; width:100%; height:100%; top:40px;"></div>
+			
+			<script>
+			var mymap = L.map('mapid').setView([51.754267, 19.452279], 17);
+			L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+				maxZoom: 18,
+				id: 'mapbox.streets'
+			}).addTo(mymap);
+			
+			function onLocationFound(e) {
+				var radius = e.accuracy / 2;
+
+				L.marker(e.latlng).addTo(map)
+					.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+				L.circle(e.latlng, radius).addTo(map);
+			}
+
+			function onLocationError(e) {
+				alert(e.message);
+			}
+
+			mymap.on('locationfound', onLocationFound);
+			//mymap.on('locationerror', onLocationError);
+
+			mymap.locate({setView: true, maxZoom: 16});
+			
+			var marker = L.marker([51.75514,19.45174]).addTo(mymap);
+			
+			</script>
+	  </header>
+	  
+		
+	  
+	</main>
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();   
+		});
+	</script>
+</body>
+</html>

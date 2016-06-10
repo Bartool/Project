@@ -1,115 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
-
-    <title>Simple Sidebar - Start Bootstrap Template</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- googleFonts --> 
+<link href="css/lobster.css" rel="stylesheet" type="text/css">
+<link href="css/bar.css" rel="stylesheet" type="text/css">
+<link href="css/bar2.css" rel="stylesheet" type="text/css">
+<!-- CSS -->   
+<link href="css/bootstrap.min.css" rel="stylesheet">  
+<link rel="stylesheet" href="css/styleSideBar.css">
+<link rel="stylesheet" href="css/leaflet.css">
+<link rel="stylesheet" href="css/mobileStyle.css">
+<!--scripts-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/leaflet.js"></script>
 
 </head>
 
 <body>
 
-    <div id="wrapper">
+	<input type="checkbox" class="checkbox" id="menu-toogle"/>
+	<label for="menu-toogle" class="menu-toogle"></label>
+	<nav class="nav">
+	  <a href="#" class="nav__item">Your profile</a>
+	  <a href="chat.html" class="nav__item">Chat</a>
+	  <a href="news.html" class="nav__item">Newsboard</a>
+	  <a href="eventBoard.html" class="nav__item">Events</a>
+	  <a href="map.html" class="nav__item current">Map</a>
+	  <a href="#" class="nav__item">Settings</a>
+	</nav>
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Your profile
-                    </a>
-                </li>
-                <li>
-                    <a href="eventBoard.html">Events</a>
-                </li>
-                <li>
-                    <a href="news.html">News</a>
-                </li>
-                <li>
-                    <a href="chat.html">Chat</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
+	<main class="main-w">
+		
+	  <header class="header-w"> 	
 
-        <!-- Page Content -->
-        <div>
-			<div style="position:relative;float:left;">
-				 <a  href="#menu-toggle" class="btn btn-default" id="menu-toggle" ><img src="img/menuButton.png" id="MenuButton" style="height:45px;width:45px;"></a>
-			</div>
-			
-			
-			<form style = "float:left;">		
-				<input class="form-control input-lg" style = "height: 60px;width: 180px" type="text" name="firstname">
+			<form style = "position: fixed; margin-left: 15%; width:70%; ">		
+				<input class="form-control" style = "width: 100%; float:left;" type="text" name="firstname">
+				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
 			</form>
-			<div>
-				<img  src="img/Search.png" id="search" style = "height: 60px;width: 60px">
-			</div>
 			
-			
-			
-				
-			<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative; height: 80%; width: 100%">
-			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 17%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-content="" data-html="true"></button>
-			
-			
-        </div>
-        <!-- /#page-content-wrapper -->
-        
 
-		<script>
+			<!--<img  src="img/map.png" id="mapp" usemap="#maplinks" style = "position: relative;  width: 100%;height: 80%;">
+			<button style = "opacity: 0; min-height: 5%; position: absolute;   top: 14%;  left: 20%;    width: 50%; " title="International Faculty of Engineering" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Building A16.<br>It is the only unit in TUL in which you can study in English. Tap <a href='ife.html'>here</a> for inside map." data-html="true"></button>
+	   
+			-->
+			<br><hr>
+			<div id="mapid" style = "position: absolute; width:100%; height:100%; top:40px;"></div>
+			
+			<script>
+			var mymap = L.map('mapid').setView([51.754267, 19.452279], 17);
+			L.tileLayer('http://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+				maxZoom: 18,
+				id: 'mapbox.streets'
+			}).addTo(mymap);
+			
+			function onLocationFound(e) {
+				var radius = e.accuracy / 2;
+
+				L.marker(e.latlng).addTo(map)
+					.bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+				L.circle(e.latlng, radius).addTo(map);
+			}
+
+			function onLocationError(e) {
+				alert(e.message);
+			}
+
+			mymap.on('locationfound', onLocationFound);
+			//mymap.on('locationerror', onLocationError);
+
+			mymap.locate({setView: true, maxZoom: 16});
+		
+			var pois = new Array(1);//points of interest
+			pois[0] = L.polygon([
+				[51.74712, 19.45561],
+				[51.74717, 19.45608],
+				[51.74693, 19.45613],
+				[51.74689, 19.45565],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);	
+			pois[0].bindPopup("Building B19.<br>Information Technology Cente");
+			
+			pois[1] = L.polygon([
+				[51.75518, 19.45082],
+				[51.75526, 19.45202],
+				[51.75512, 19.45207],
+				[51.75500, 19.45085],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[1].bindPopup("Building A16.<br>International Faculty of Engineering. Tap <a href='ife.html'>here</a> for inside map.");
+				
+			pois[2] = L.polygon([
+				[51.75405, 19.45189],
+				[51.75407, 19.45219],
+				[51.75369, 19.45228],
+				[51.75364, 19.45198],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[2].bindPopup("Building A19.<br>Soltan auditorium");
+				
+			pois[3] = L.polygon([
+				[51.75255, 19.45298],
+				[51.75293, 19.45289],
+				[51.75298, 19.45373],
+				[51.75262, 19.45384],
+			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);
+			pois[3].bindPopup("Building A10, W-2<br><uL><li>Deanery of  the Faculty of Electrical, Electronic, Computer and Control Engineering</li><li>I-12, Institute of electronic engineering systems</li><li>I-13, Institute of  Automatics</li><li>I-24, Institute of applied computer science</li><ul>");
+			</script>
+	  </header>
+	  
+		
+	  
+	</main>
+	<script>
 		$(document).ready(function(){
 			$('[data-toggle="popover"]').popover();   
 		});
-		</script>
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
-
+	</script>
 </body>
-
 </html>
