@@ -58,21 +58,15 @@
 			
 			function onLocationFound(e) {
 				var radius = e.accuracy / 2;
-
 				L.marker(e.latlng).addTo(map)
 					.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
 				L.circle(e.latlng, radius).addTo(map);
 			}
-
-			function onLocationError(e) {
-				alert(e.message);
-			}
-
+  			mymap.locate({setView: true, maxZoom: 16, enableHighAccuracy: true});
 			mymap.on('locationfound', onLocationFound);
-			//mymap.on('locationerror', onLocationError);
-
-			mymap.locate({setView: true, maxZoom: 16});
+			
+			
 		
 			var pois = new Array(1);//points of interest
 			pois[0] = L.polygon([
@@ -81,7 +75,7 @@
 				[51.74693, 19.45613],
 				[51.74689, 19.45565],
 			], {opacity:0.1, fillOpacity: 0}).addTo(mymap);	
-			pois[0].bindPopup("Building B19.<br>Information Technology Cente");
+			pois[0].bindPopup("Building B19.<br>Information Technology Cente. Tap <a href='cti.html'>here</a> for inside map. ");
 			
 			pois[1] = L.polygon([
 				[51.75518, 19.45082],

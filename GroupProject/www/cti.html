@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- googleFonts --> 
+	<link href="css.lobster.css" rel="stylesheet" type="text/css">
+	<link href="css/bar.css" rel="stylesheet" type="text/css">
+	<link href="css/bar2" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<!-- css --> 
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/eventBoard.css" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/styleSideBar.css">
+	<link rel="stylesheet" href="css/mobileStyle.css">
+	<!-- scripts-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<style>
+* {box-sizing:border-box}
+
+
+/* Slideshow container */
+.slideshow-container {
+  	max-width: 700px;
+
+  	position: relative;
+  	margin: auto;
+}
+.floorPic
+{
+	max-height: 700px;
+}	
+
+/* floor number */
+.numbertext {  
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* floor change */
+.dot {
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .slprev, .slnext,.text {font-size: 11px}
+}
+</style>
+	
+	
+<body>
+	<input type="checkbox" class="checkbox" id="menu-toogle"/>
+	<label for="menu-toogle" class="menu-toogle"></label>
+	<nav class="nav">
+	  <a href="#" class="nav__item current">Your profile</a>
+	  <a href="chat.html" class="nav__item ">Chat</a>
+	  <a href="news.html" class="nav__item">Newsboard</a>
+	  <a href="eventBoard.html" class="nav__item">Events</a>
+	  <a href="map.html" class="nav__item">Map</a>
+	  <a href="#" class="nav__item current">Settings</a>
+	</nav>
+
+	<main class="main-w">
+		
+		<header class="header-w"> 	
+			<form style = "position: fixed; margin-left: 15%; width:70%; ">		
+				<input class="form-control" style = "width: 100%; float:left;" type="text" name="firstname">
+				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
+			</form>
+			<br><hr>
+			
+			<div class="slideshow-container">
+
+			<div class="mySlides w3-animate-opacity">
+			  <div class="numbertext ">ground floor</div>
+			  <img class="floorPic" src="img/CTI/groundfloor.png" style="width:100%">
+			</div>
+
+			<div class="mySlides w3-animate-opacity" >
+			  <div class="numbertext">1st floor</div>
+			  <img class="floorPic"  src="img/CTI/1floor.png" style="width:100%">
+			</div>
+
+			<div class="mySlides w3-animate-opacity">
+			  <div class="numbertext">2nd floor</div>
+			  <img class="floorPic"  src="img/CTI/2floor.png" style="width:100%">
+			</div>
+			<div class="mySlides w3-animate-opacity">
+			  <div class="numbertext">3rd floor</div>
+			  <img class="floorPic"  src="img/CTI/3floor.png" style="width:100%">
+			</div>
+			<div class="mySlides w3-animate-opacity">
+			  <div class="numbertext">4th floor</div>
+			  <img class="floorPic"  src="img/CTI/4floor.png" style="width:100%">
+			</div>
+
+			</div>
+			<br>
+			<p>Select floor:</p>
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)">0</span>
+				<span class="dot" onclick="currentSlide(2)">1</span>
+				<span class="dot" onclick="currentSlide(3)">2</span>
+				<span class="dot" onclick="currentSlide(4)">3</span>
+				<span class="dot" onclick="currentSlide(5)">4</span>
+			</div>
+
+			<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " active";
+			}
+			</script>
+			
+		</header>
+	  
+
+	</main>
+	
+	
+
+</body>
+	
+	
+</html>
