@@ -20,10 +20,10 @@
 	<script>
 		$(document).on("pagecreate",function(){
 		  $("body").on("swipeleft",function(){
-			  $("input.checkbox").prop('checked', false);	  
+			  $("input.checkbox").prop('checked', false);	  //close the sidebar
 		  });
 		  $("body").on("swiperight",function(){
-			  $("input.checkbox").prop('checked', true);	  
+			  $("input.checkbox").prop('checked', true);	//open the sidebar  
 		  });
 		});
 	</script>
@@ -43,7 +43,7 @@
 	  <a href="#" class="nav__item">Settings</a>
 	</nav>
 
-	<main data-role="page" class="main-w">
+	<main data-role="page" class="main-w">	<!--data-role is for swipe to work-->
 		
 	  <header class="header-w"> 	
 
@@ -62,7 +62,7 @@
 			</div>
 		  
 		  <script>
-				$("a").click(function(event)
+				$("a").click(function(event) //for links to work on jQuery
 				{
 					var link = $(this);
 					var target = link.attr("target");
