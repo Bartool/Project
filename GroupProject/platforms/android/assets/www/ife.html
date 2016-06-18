@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- googleFonts --> 
 	<link href="css.lobster.css" rel="stylesheet" type="text/css">
 	<link href="css/bar.css" rel="stylesheet" type="text/css">
@@ -12,8 +15,24 @@
 	<link rel="stylesheet" href="css/styleSideBar.css">
 	<link rel="stylesheet" href="css/mobileStyle.css">
 	<!-- scripts-->
+	
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+	
+
+	
+	<script>
+		$(document).on("pagecreate",function(){
+		  $("body").on("swipeleft",function(){
+			  $("input.checkbox").prop('checked', false);	  
+		  });
+		  $("body").on("swiperight",function(){
+			  $("input.checkbox").prop('checked', true);	  
+		  });
+		});
+	</script>
 </head>
 
 <body>
@@ -28,7 +47,7 @@
 	  <a href="#" class="nav__item">Settings</a>
 	</nav>
 
-	<main class="main-w">
+	<main data-role="page" class="main-w">
 		
 	  <header class="header-w"> 	
 
@@ -37,29 +56,32 @@
 				<input type="image" value="Submit" src="img/Search.png" alt = "submit" id="search" style = "position: fixed; height: 30px;width: 30px; margin-left : 5%;">
 			</form>
 			<br><hr>
-			<h1>Indoor map of IFE</h1>
+			<h1 class="demo">Indoor map of IFE</h1>
+		  	<div ></div>
 			<h3>Ground floor</h3>
 			<img src = "img/ifeMap.png" alt = "ife map" style = "width: 100%;">
-		  	<p id="demo"></p>
+		  
+		  
 			<script>
-			var x = document.getElementById("demo");
+				$("a").click(function(event)
+				{
+					var link = $(this);
+					var target = link.attr("target");
 
-			function getLocation() {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(showPosition);
-				} else {
-					x.innerHTML = "Geolocation is not supported by this browser.";
-				}
-			}
+					if($.trim(target).length > 0)
+					{
+						window.open(link.attr("href"), target);
+					}
+					else
+					{
+						window.location = link.attr("href");
+					}
 
-			function showPosition(position) {
-				x.innerHTML = "Latitude: " + position.coords.latitude +
-				"<br>Longitude: " + position.coords.longitude;
-			}
-				
-			getLocation();	
+					event.preventDefault();
+				});
 			</script>
-
+			 
+			
 		  
 		  
 	  </header>
@@ -67,7 +89,7 @@
 
 	</main>
 	
-	
+
 
 </body>
 	

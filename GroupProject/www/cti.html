@@ -15,6 +15,20 @@
 	<!-- scripts-->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+	
+	<script>
+		$(document).on("pagecreate",function(){
+		  $("body").on("swipeleft",function(){
+			  $("input.checkbox").prop('checked', false);	  
+		  });
+		  $("body").on("swiperight",function(){
+			  $("input.checkbox").prop('checked', true);	  
+		  });
+		});
+	</script>
+	
 </head>
 <style>
 * {box-sizing:border-box}
@@ -74,7 +88,7 @@
 	  <a href="#" class="nav__item current">Settings</a>
 	</nav>
 
-	<main class="main-w">
+	<main data-role="page" class="main-w">
 		
 		<header class="header-w"> 	
 			<form style = "position: fixed; margin-left: 15%; width:70%; ">		
@@ -142,6 +156,25 @@
 			  slides[slideIndex-1].style.display = "block";
 			  dots[slideIndex-1].className += " active";
 			}
+			</script>
+			
+			<script>
+				$("a").click(function(event)
+				{
+					var link = $(this);
+					var target = link.attr("target");
+
+					if($.trim(target).length > 0)
+					{
+						window.open(link.attr("href"), target);
+					}
+					else
+					{
+						window.location = link.attr("href");
+					}
+
+					event.preventDefault();
+				});
 			</script>
 			
 		</header>
