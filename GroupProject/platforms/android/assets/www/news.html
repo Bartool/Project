@@ -16,19 +16,53 @@
 	<script src="js/bootstrap.min.js"></script>
 	
 	
-	
 	<script>
-		$(document).on("pagecreate",function(){
+		/*$(document).on("pagecreate",function(){
 		  $("body").on("swipeleft",function(){
-			  $("input.checkbox").prop('checked', false);	  
+			  $("input.checkbox").prop('checked', false);	  //close the sidebar
 		  });
 		  $("body").on("swiperight",function(){
-			  $("input.checkbox").prop('checked', true);	  
+			  $("input.checkbox").prop('checked', true);	//open the sidebar  
 		  });
 		});
 	</script>
+	<script>
+		document.addEventListener('touchstart', handleTouchStart, false);  
+		document.addEventListener('touchmove', handleTouchMove, false);
+		
+		var xDown = null;                                                        
+		var yDown = null;                                                        
+
+		function handleTouchStart(evt) {                                         
+			xDown = evt.touches[0].clientX;                                      
+			
+		};                                                
+
+		function handleTouchMove(evt) {
+			if ( !xDown ) {
+				return;
+			}
+
+			var xUp = evt.touches[0].clientX;                                    
+			var xDiff = xDown - xUp;
+
+			
+			if ( xDiff > 0 ) {
+				$("input.checkbox").prop('checked', false); 
+				document.getElementById("menu-toggle").checked = false;
+			} else {
+				$("input.checkbox").prop('checked', true); 
+				document.getElementById("menu-toggle").checked = true;		
+			}                       
+			
+			/* reset values */
+			xDown = null;
+			yDown = null;                                             
+		};
 	
-	<script src="js/jquery.mobile-1.4.5.js"></script>
+	</script>
+		
+	
 </head>
 
 <body>
@@ -43,7 +77,7 @@
 	  <a href="#" class="nav__item">Settings</a>
 	</nav>
 
-	<main data-role="page" class="main-w">
+	<main data-role="page" class="main-w">	<!--data-role is for swipe to work-->
 		
 	  <header class="header-w"> 	
 
@@ -62,7 +96,7 @@
 			</div>
 		  
 		  <script>
-				$("a").click(function(event)
+				$("a").click(function(event) //for links to work on jQuery
 				{
 					var link = $(this);
 					var target = link.attr("target");
