@@ -1,5 +1,5 @@
-//var db = new PouchDB('https://couchdb-8c6f39.smileupps.com/userspbl');
-  var db = new PouchDB('http://127.0.0.1:5984/pbldb');
+var db = new PouchDB('https://couchdb-8c6f39.smileupps.com/userspbl');
+//  var db = new PouchDB('http://127.0.0.1:5984/pbldb');
 
 function login(){
   var name, pswd, user ;
