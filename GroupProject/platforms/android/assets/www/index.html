@@ -21,6 +21,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="js/pouchdb-5.3.2.min.js"></script>
+    <script src="js/accounts.js"></script>
+    
 
 </head>
 
@@ -68,7 +71,7 @@
 
 									<div class="col-sm-12 controls">
                                       <a id="btn-login" href="map.html" class="btn btn-success">Login  </a>
-                                      <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
+                                      <a id="btn-fblogin" href="#" class="btn btn-primary" onclick="login()">Login with Facebook</a>
 									  <a id="btn-googlelogin" href="#" class="btn btn-danger">Login with Google+</a>
 
 									</div>
