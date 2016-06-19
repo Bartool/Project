@@ -1,0 +1,42 @@
+* {box-sizing:border-box}
+
+
+/* Slideshow container */
+.slideshow-container {
+  	max-width: 700px;
+
+  	position: relative;
+  	margin: auto;
+}
+.floorPic
+{
+	max-height: 700px;
+}	
+
+/* floor number */
+.numbertext {  
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* floor change */
+.dot {
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .slprev, .slnext,.text {font-size: 11px}
+}
