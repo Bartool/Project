@@ -80,7 +80,7 @@ function newUser() {
                                         else {
                                             
                                             alert("Account succesfully created!")
-                                        document.location.href = "map.html";
+                                        document.location.href = "index.html";
                         
                                         }
                                         
