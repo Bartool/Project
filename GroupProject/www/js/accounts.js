@@ -7,7 +7,7 @@ function login() {
     pswd = document.getElementById("login-password").value;
     console.log(db.get);
   db.get(name).then(function (doc){
-      alert("alerta");
+      
       console.log(doc);
       if(pswd == doc.password)
         document.location.href = "map.html";
